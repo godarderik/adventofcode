@@ -18,7 +18,8 @@ def problema():
         if test1 and test3 and test2:
             count += 1
         tot += 1
-    print count, tot
+    f.close()
+    return count
 def problemb():
     f = open("input5.txt")
     count = 0
@@ -46,7 +47,8 @@ def problemb():
                 test1 = True
         if test1 and test2:
             count += 1
-    print count
+    f.close()
+    return count
 
 
-problemb()
+print problema(), problemb()

@@ -43,7 +43,8 @@ def problemb():
     for x in grid:
         for y in x:
             count += y
-    print count
+    f.close()
+    return count
 
 def problema():
     f = open("input6.txt")
@@ -91,4 +92,6 @@ def problema():
     for x in grid:
         for y in x:
             count += y
-    print count
+    f.close()
+    return count
+print problema(), problemb()

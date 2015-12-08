@@ -1,3 +1,6 @@
+f = open("input3.txt")
+l = f.read()
+
 def move(coord, char):
     if char == "<":
         coord = (coord[0] - 1, coord[1])
@@ -10,10 +13,19 @@ def move(coord, char):
     return coord
 
 def problema():
-    f = open("input3.txt")
-    l = f.read()
     locs = {}
+    coord1 = (0,0)
+    locs[coord1] = 1
+    for char in l:
+        coord1 = move(coord1, char)
+        locs[coord1] = 1
+        
+    f.close()
+    return len(locs)
 
+
+def problemb():
+    locs = {}
     coord1 = (0,0)
     coord2 = (0,0)
 
@@ -29,7 +41,7 @@ def problema():
             locs[coord2] = 1
         count += 1
         
-
-    print len(locs)
+    f.close()
+    return len(locs)
         
-problema()
+print problema(), problemb()
