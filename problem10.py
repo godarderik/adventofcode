@@ -17,7 +17,7 @@ def nextnumber(number):
     return out
 
 
-inpt = "3113322113"
+inpt = "1113222113"
 
 for x in range(50):
     inpt = nextnumber(inpt)
