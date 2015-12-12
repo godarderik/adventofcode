@@ -11,6 +11,7 @@ def incrementString(string):
         string[ind] = "a"
         ind -= 1
         last = string[ind]
+        
     string[ind] = increment(last)
     return "".join(string)
         
