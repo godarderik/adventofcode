@@ -1,5 +1,6 @@
 import json
 import re
+
 f = open("input12.json").read()
 
 line = json.loads(f)
