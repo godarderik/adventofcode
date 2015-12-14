@@ -13,24 +13,9 @@ for line in f:
     points[line[0]] = 0
     dist[line[0]] = 0
     state[line[0]] = [True, int(line[6])]
-def problema():  
-    time = 2503
-    maxdist = 0
-    for k,v in times.iteritems():
-        tot = v[1] * v[2]
-        its = time/tot
-        dist = v[0] * v[1] * its
-        last = time % tot
-
-        frac = last/int(v[1])
-        if frac > 1:
-            frac = 1
-        dist += frac * v[1] * v[0]
-        maxdist = max(maxdist, dist)
-    print maxdist
 
 
-def problemb():
+def problemab():
     for x in range(2503):
         for k,v in times.iteritems():
             if state[k][0] == True and state[k][1] == 0:
@@ -55,9 +40,9 @@ def problemb():
                 maxP.append(j)
         for y in maxP:
             points[y] += 1
-    print max(points.values())
+    print max(points.values()), max(dist.values())
 
-problema(), problemb()
+problemab()
 
 
 
