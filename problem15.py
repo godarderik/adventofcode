@@ -8,10 +8,10 @@ with open("input15.txt") as f:
 
 maxScore = 0
 
-for a in range(101):
-    for b in range(101 - a):
-        for c in range(101 - a - b):
-            for d in range(101 - a - b - c):
+for a in xrange(101):
+    for b in xrange(101 - a):
+        for c in xrange(101 - a - b):
+            for d in xrange(101 - a - b - c):
                 score = 1
                 scores = []
                 for x in range(5):
