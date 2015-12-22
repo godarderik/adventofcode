@@ -19,8 +19,6 @@ def willWin(playerArmor, playerHP, playerDamage, monsterArmor, monsterHP, monste
             playerHP -= max(monsterDamage - playerArmor, 1)
         turn = not turn
     return not (monsterHP <= 0)
-print willWin(5, 8, 5, 12, 7, 2)
-
 
 
 with open('input21.txt') as f:
