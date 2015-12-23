@@ -113,7 +113,7 @@ def generateSuccessors(gameState):
             yield b
         elif b["winner"] == None:
             x = stepMonster(b)
-            if x["winner"] != "monster" and x["player_mana_spent"] < 2200:
+            if x["winner"] != "monster" and x["player_mana_spent"] < 1500:
                 yield x
 def problema():
 
@@ -123,8 +123,8 @@ def problema():
     gameState["player_mana"] = 500
     gameState["player_mana_spent"] = 0
     gameState["player_armor_bonus"] = 0
-    gameState["monster_hp"] = 71
-    gameState["monster_damage"] = 10
+    gameState["monster_hp"] = 55
+    gameState["monster_damage"] = 8
     gameState["shield_active"] = 0
     gameState["poison_active"] = 0
     gameState["recharge_active"] = 0
@@ -138,7 +138,8 @@ def problema():
         state = queue.pop()
         if state["winner"] == "player":
             minCost = min(minCost, state["player_mana_spent"])
-            print state
+            print minCost
+            #print state
         else:
             for x in generateSuccessors(state):
                 queue.push(x)
