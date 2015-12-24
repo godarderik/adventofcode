@@ -6,8 +6,7 @@ nums = []
 with open('input24.txt') as f:
     for line in f:
         nums.append(int(line.strip("\n")))
-
-parts = 3
+parts = 4
 tot = sum(nums)/parts
 
 def hasSum(lst, sub):
@@ -17,6 +16,6 @@ def hasSum(lst, sub):
                 return True
             elif sum(x) == tot and sub < parts:
                 return hasSum(list(set(lst) - set(x)), sub - 1)
-            elif sub == parts and sum(x) == tot and hasSum(list(set(lst) - set(x)), sub - 1) :
+            elif sum(x) == tot and hasSum(list(set(lst) - set(x)), sub - 1) :
                 return reduce(operator.mul, x, 1)
 print hasSum(nums, parts)
