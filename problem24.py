@@ -1,21 +1,18 @@
 import itertools
 import operator
 
-nums = []
+nums = map(int, [line.strip("\n") for line in open('input24.txt')])
 
-with open('input24.txt') as f:
-    for line in f:
-        nums.append(int(line.strip("\n")))
 parts = 4
 tot = sum(nums)/parts
 
 def hasSum(lst, sub):
-    for y in range(1,len(lst)):
-        for x in itertools.combinations(lst, y):
-            if sum(x) == tot and sub == 2:
+    for y in range(1,len(lst)): 
+        for x in (z for z in itertools.combinations(lst, y) if sum(z) == tot) :
+            if sub == 2:
                 return True
-            elif sum(x) == tot and sub < parts:
+            elif sub < parts:
                 return hasSum(list(set(lst) - set(x)), sub - 1)
-            elif sum(x) == tot and hasSum(list(set(lst) - set(x)), sub - 1) :
+            elif hasSum(list(set(lst) - set(x)), sub - 1):
                 return reduce(operator.mul, x, 1)
 print hasSum(nums, parts)
