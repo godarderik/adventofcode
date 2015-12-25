@@ -3,7 +3,7 @@ import operator
 
 nums = map(int, [line.strip("\n") for line in open('input24.txt')])
 
-parts = 4
+parts = 8
 tot = sum(nums)/parts
 
 def hasSum(lst, sub):
