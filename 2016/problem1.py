@@ -1,10 +1,5 @@
-import random
-import collections
-
 pos = (0,0)
-
 direction = 0
-
 locs = set()
 first = []
 
