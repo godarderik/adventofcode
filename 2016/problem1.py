@@ -9,15 +9,10 @@ locs = set()
 first = []
 
 def nextDir(direc):
-    global direction
     if direc == "R":
-        direction += 1
-        if direction == 4:
-            direction = 0
+        return direction + 1 if direction < 3 else 0
     if direc == "L":
-        direction -= 1
-        if direction == -1:
-            direction = 3
+        return direction - 1 if direction > 0 else 3
 
 def move(position, direction):
     if direction == 0:
@@ -32,7 +27,7 @@ def move(position, direction):
 with open("input1.txt") as f:
     line = f.read().strip("\n").split(",")
     for x in line:
-        nextDir(x[0])
+        direction = nextDir(x[0])
         for x in range(int(x[1:])):
             pos = move(pos, direction)
             if pos in locs:
