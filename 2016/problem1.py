@@ -8,21 +8,13 @@ direction = 0
 locs = set()
 first = []
 
+moves = [(0,1), (1,0), (0,-1), (-1,0)]
+
 def nextDir(direc):
-    if direc == "R":
-        return direction + 1 if direction < 3 else 0
-    if direc == "L":
-        return direction - 1 if direction > 0 else 3
+    return (direction + 1 if direction < 3 else 0) if direc == "R" else (direction - 1 if direction > 0 else 3)
 
 def move(position, direction):
-    if direction == 0:
-        return (position[0], position[1] + 1)
-    elif direction == 1:
-        return (position[0] + 1, position[1])
-    elif direction == 2:
-        return (position[0], position[1] - 1)
-    elif direction == 3:
-        return (position[0] - 1, position[1])
+    return (position[0] + moves[direction][0], position[1] + moves[direction][1]) 
 
 with open("input1.txt") as f:
     line = f.read().strip("\n").split(",")
