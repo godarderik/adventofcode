@@ -13,6 +13,7 @@ def move(position, direction):
 
 with open("input1.txt") as f:
     line = f.read().strip("\n").split(",")
+    print len(line)
     for x in line:
         direction = nextDir(x[0])
         for x in range(int(x[1:])):
