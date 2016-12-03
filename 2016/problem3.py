@@ -1,7 +1,8 @@
 count = 0
 
 def check(line):
-    return line[0] + line[1] > line[2] and line[0] + line[2] > line[1] and line[1] + line[2] > line[0]
+    line.sort()
+    return line[0] + line[1] > line[2]
 
 with open("input3.txt") as f:
     while True:     
