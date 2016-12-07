@@ -1,3 +1,5 @@
+# coding: utf8
+
 from collections import *
 
 with open("input6.txt") as f:
