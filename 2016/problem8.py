@@ -40,7 +40,7 @@ with open("input8.txt") as f:
             rotate_col(int(line[2][2:]),int(line[-1]))
 
 #123
-#AFUPZBJP
+#AFBUPZBJPS
 count = 0
 for x in arr:
     string = ""
