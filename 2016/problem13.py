@@ -12,6 +12,19 @@ def get_next(tup):
 while len(frontier) > 0:
     new = frontier.pop()
     explored[(new[0], new[1])] = new[2]
-    frontier += [x for x in get_next(new) if not (x[0], x[1]) in explored or explored[(x[0], x[1])] > x[2]]
+    frontier = [x for x in get_next(new) if not (x[0], x[1]) in explored or explored[(x[0], x[1])] > x[2]] + frontier
 
 print explored[(31,39)], len([explored[x] for x in explored.keys() if explored[x] <= 50])
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,3 +23,4 @@ while True:
     if all([z != -1 for z in t]):
         break
 print out[:8], ["".join(t)][0]
+
